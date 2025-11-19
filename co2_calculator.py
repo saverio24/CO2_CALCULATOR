@@ -45,3 +45,24 @@ def calculate_co2():
 
     meat_meals: int = int(input("How many meals with meat do you eat per week? "))
 
+    # --- Emission factors (kg CO₂ per unit) ---
+    CO2_CAR: float = 0.12
+    CO2_BUS: float = 0.05
+    CO2_SHORT_FLIGHT: float = 300.0
+    CO2_LONG_FLIGHT: float = 1000.0
+    CO2_ELECTRICITY: float = 0.233
+    CO2_MEAT: float = 5.0
+
+    # --- Annual calculations ---
+    co2_car: float = km_car * 52 * CO2_CAR
+    co2_bus: float = km_bus * 52 * CO2_BUS
+
+    co2_plane: float = (
+        short_flights * CO2_SHORT_FLIGHT +
+        long_flights * CO2_LONG_FLIGHT
+    )
+
+    co2_electricity: float = electricity_use * 12 * CO2_ELECTRICITY
+    co2_food: float = meat_meals * 52 * CO2_MEAT
+
+    total: float = co2_car + co2_bus + co2_plane + co2_electricity + co2_food

@@ -66,3 +66,18 @@ def calculate_co2():
     co2_food: float = meat_meals * 52 * CO2_MEAT
 
     total: float = co2_car + co2_bus + co2_plane + co2_electricity + co2_food
+     # --- Text output ---
+    print("\n📊 Estimated annual CO₂ emissions:")
+    for cat, val in categories.items():
+        print(f" - {cat}: {val:.1f} kg CO₂")
+
+    print(f"\n🌱 Total annual footprint: {total:.1f} kg CO₂")
+
+    # --- Simple feedback ---
+    if total > 10000:
+        print("⚠ Above average emissions. Try reducing flights, car use and meat consumption.")
+    elif total > 5000:
+        print("🙂 Around the average, but there’s room for improvement.")
+    else:
+        print("✅ Great! Your footprint is lower than average.")
+

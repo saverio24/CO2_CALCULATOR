@@ -81,3 +81,15 @@ def calculate_co2():
     else:
         print("✅ Great! Your footprint is lower than average.")
 
+# --- Bar chart ---
+    plt.figure(figsize=(8, 5))
+    plt.bar(categories.keys(), categories.values())
+    plt.title("CO₂ Footprint by Category")
+    plt.ylabel("kg of CO₂ per year")
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.tight_layout()
+    plt.show()
+
+
+if __name__ == "__main__":
+    calculate_co2()

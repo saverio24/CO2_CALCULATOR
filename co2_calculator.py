@@ -24,3 +24,24 @@ def calculate_co2():
     All results are displayed directly to the user.
     """
     print("🌍 Personal CO₂ Footprint Calculator\n")
+# --- User input ---
+    km_car: float = float(input("How many km do you drive by car per week? "))
+    km_bus: float = float(input("How many km do you travel by bus per week? "))
+
+    # Short-haul flights
+    print("\n✈ SHORT-HAUL FLIGHTS:")
+    print("Short-haul flights are usually under 3 hours, roughly less than 1500–2000 km.")
+    print("Examples: Rome → Madrid, Paris → London.")
+    short_flights: int = int(input("How many short-haul flights did you take this year? "))
+
+    # Long-haul flights
+    print("\n✈ LONG-HAUL FLIGHTS:")
+    print("Long-haul flights usually last more than 3 hours and often cross continents.")
+    print("Examples: Rome → New York, Madrid → Buenos Aires.")
+    long_flights: int = int(input("How many long-haul flights did you take this year? "))
+
+    # Electricity consumption
+    electricity_use: float = float(input("\nMonthly electricity consumption (in kWh): "))
+
+    meat_meals: int = int(input("How many meals with meat do you eat per week? "))
+
